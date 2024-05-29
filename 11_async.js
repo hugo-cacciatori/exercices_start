@@ -44,9 +44,10 @@ const usingAwait = async (cb) => {
 //décommentez la ligne suivante une fois le package installé
 //const axios = require("axios");
 
-const apiResponse = async (url) => {
+const axios = require("axios");
 
-}
+const apiResponse = async (url) => (await axios.get(url)).data
 
 
+apiResponse('https://jsonplaceholder.typicode.com/todos/1').then(res => console.log(res))
 module.exports = {usingThen, usingAwait, apiResponse};
