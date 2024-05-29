@@ -18,11 +18,4 @@
 
 const getGroupName = (obj) => obj?.group?.name
 
-console.log(getGroupName({
-      name: "John",
-        group: {
-          name: "admin"
-        }
-      }));
-
 module.exports = {getGroupName};
