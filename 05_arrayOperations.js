@@ -27,7 +27,7 @@ const multiplyByTwo = (array) =>
   */
 
 const filterNameStartByA = (array) =>
-  array.filer((keyword) =>
+  array.filter((keyword) =>
     keyword.startsWith("A")
   )
 
@@ -69,5 +69,5 @@ const findUserById = (array, id) =>
   array.find((member)=>
    member.id == id
   )?.name ?? null
-  
+
 module.exports = {multiplyByTwo, filterNameStartByA, sum, findUserById};
