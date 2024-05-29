@@ -11,8 +11,7 @@
  *    - ne pas utiliser async await
  * 
  */
-const usingThen = (cb) => {
-}
+const usingThen = (cb) => {new Promise(resolve => setTimeout(resolve, 2000)).then(cb)}
 
 /**
  * Créez une fonction asynchrone qui attend 2 seconde puis execute le callback passé en paramètre
@@ -25,8 +24,9 @@ const usingThen = (cb) => {
  *   - ne pas utiliser .then
  */
 
-const usingAwait = (cb) => {
-
+const usingAwait = async (cb) => {
+    await wait(2000);
+    cb;
 }
 
 /**
