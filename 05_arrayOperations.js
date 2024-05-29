@@ -43,7 +43,7 @@ const filterNameStartByA = (array) =>
 
 const sum = (array) =>
   array.reduce((total,num) =>
-    total+=num
+    total + num, 0
   )
 
 /**
