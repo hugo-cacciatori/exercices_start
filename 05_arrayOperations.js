@@ -29,7 +29,7 @@ const multiplyByTwo = (array) =>
 const filterNameStartByA = (array) =>
   array.filer((keyword) =>
     keyword.startsWith("A")
-  );
+  )
 
 /**
  * Utiliser la fonction .reduce sur le tableau passé en paramètre
@@ -66,8 +66,8 @@ const sum = (array) =>
   */
 
 const findUserById = (array, id) =>
-  array.find((uid, name) =>
-    uid == id ? name: null
-  )
-
+  array.find((member)=>
+   member.id == id
+  )?.name ?? null
+  
 module.exports = {multiplyByTwo, filterNameStartByA, sum, findUserById};
