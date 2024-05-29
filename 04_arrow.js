@@ -20,6 +20,6 @@ let arrow1 = (x) => {
  *   - le mot clée "return" est interdis
  */
 
-let arrow2 = (x) => {x+1}
+let arrow2 = (x) => x+1
 
 module.exports = {arrow1, arrow2};
