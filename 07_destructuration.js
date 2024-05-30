@@ -12,7 +12,7 @@
  *  - interdiction d'utiliser slice ou splice
  */
 
-const extractFirstTwo = ([first, second, ...rest]) => [first, second];
+const extractFirstTwo = ([first, second]) => [first, second];
 
 
 /**

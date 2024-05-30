@@ -11,7 +11,7 @@
  *    - ne pas utiliser async await
  * 
  */
-const usingThen = (cb) => {new Promise(resolve => setTimeout(resolve, 2000)).then(cb)}
+const usingThen = (cb) => new Promise(resolve => setTimeout(resolve, 2000)).then(cb())
 
 /**
  * Créez une fonction asynchrone qui attend 2 seconde puis execute le callback passé en paramètre
@@ -26,7 +26,7 @@ const usingThen = (cb) => {new Promise(resolve => setTimeout(resolve, 2000)).the
 
 const usingAwait = async (cb) => {
     await wait(2000);
-    cb;
+    cb();
 }
 
 /**
@@ -46,8 +46,11 @@ const usingAwait = async (cb) => {
 
 const axios = require("axios");
 
-const apiResponse = async (url) => (await axios.get(url)).data
+const apiResponse = async (url) => (await axios.get(url)).data;
 
+(async () => {
+    //console.log(await apiResponse("https://jsonplaceholder.typicode.com/todos/1"));
+})()
 
-apiResponse('https://jsonplaceholder.typicode.com/todos/1').then(res => console.log(res))
+//apiResponse('https://jsonplaceholder.typicode.com/todos/1').then(res => console.log(res))
 module.exports = {usingThen, usingAwait, apiResponse};
